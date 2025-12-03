@@ -89,6 +89,87 @@
         .payment-method-box { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 20px; background: #f9f9f9; }
 
 
+        /* IMPACT VISUAL COMPOSITION */
+.impact-wrapper {
+    position: relative;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto; /* Center it */
+}
+
+/* 1. The Tall Main Photo */
+.main-impact-img {
+    width: 90%;
+    height: 500px; /* Force it tall */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 10%; /* Shift right to make room for green box */
+}
+
+/* 2. The Green Floating Badge */
+.impact-badge {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 220px;
+    padding: 30px 20px;
+    background-color: #2fb42a; /* Bright Green */
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 2; /* Sit on top of photo */
+}
+/* The little Red Triangle shadow effect */
+.impact-badge::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid #a31d1d; /* Dark Red Shadow */
+    border-left: 15px solid transparent;
+}
+
+/* 3. The Video Thumbnail Floating Card */
+.video-float-card {
+    position: absolute;
+    bottom: 50px;
+    right: -10px;
+    width: 240px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 3; /* Sit on top of everything */
+    transition: transform 0.3s ease;
+}
+.video-float-card:hover {
+    transform: scale(1.05); /* Zoom slightly on hover */
+}
+.play-btn-circle {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; height: 50px;
+    background: #2fb42a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; justify-content: center;
+    color: white;
+    font-size: 24px;
+    border: 3px solid white;
+}
+
+/* MOBILE FIXES: Reset the float logic for phones */
+@media (max-width: 768px) {
+    .main-impact-img { width: 100%; margin: 0; height: 350px; }
+    .impact-badge { position: relative; width: 100%; top: 0; left: 0; margin-bottom: -30px; }
+    .video-float-card { position: relative; bottom: 0; right: 0; width: 100%; margin-top: -50px; }
+}
+
+
         /* =============================================
    MOBILE RESPONSIVENESS FIXES 
    ============================================= */
@@ -180,7 +261,10 @@
             <div class="carousel-item" style="background-image: url('images/Agriculture1.jpeg');">
                 <div class="carousel-overlay"></div>
             </div>
-            <div class="carousel-item" style="background-image: url('images/Training.jpeg');">
+            <div class="carousel-item" style="background-image: url('images/Background2.jpeg');">
+                <div class="carousel-overlay"></div>
+            </div>
+             <div class="carousel-item" style="background-image: url('images/Background3.jpeg');">
                 <div class="carousel-overlay"></div>
             </div>
 
@@ -196,7 +280,7 @@
     <div class="hero-content">
         <h1 class="display-3 fw-bold">Building Brighter Futures</h1>
         <p class="lead mb-4">One click, one skill, and one opportunity at a time.</p>
-        <p class="mb-4">Empowering vulnerable children through Football, Education, and Agribusiness in Ong'icha, Kisii County.</p>
+        <p class="mb-4">Empowering vulnerable kids through Play, Learn and Thrive by promoting: Education, Health Care, Life Skills, Agribusiness and empowerment projects that reduce food insecurity through Sports.</p>
         <div>
 <a href="#" class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE / VOLUNTEER</a>       
      <a href="#contact" class="btn btn-outline-light btn-lg">Partner With Us</a>
@@ -205,90 +289,378 @@
 
 </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="mb-4">Who We Are</h2>
-                    <p class="lead">Ong'icha Soccer Academy (OSA) is a grassroots youth empowerment organization based at <strong>Ong'icha Primary/Secondary School</strong> along the Kisii-Oyugis Highway.</p>
-                    <p>Founded by Zachary Obiero, we support orphans and vulnerable children by providing access to football, healthcare, and practical life skills.</p>
-                    <div class="d-flex justify-content-center gap-3 mt-4">
-                        <a href="https://www.facebook.com/profile.php?id=61581641885620" class="btn btn-outline-primary btn-sm">Facebook</a>
-                        <a href="https://www.linkedin.com/in/ong-icha-soccer-academy-osa-a10030373" class="btn btn-outline-primary btn-sm">LinkedIn</a>
-                        <a href="https://www.instagram.com/zachary.obiero" class="btn btn-outline-danger btn-sm">Instagram</a>
+    <!-- ABOUT & CORE VALUES SECTION -->
+<section id="about" class="py-5 bg-white">
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h5 class="text-success fw-bold text-uppercase">Play. Learn. Thrive.</h5>
+            <h2 class="display-5 fw-bold">More Than Just a Game</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                OSA uses football as a doorway to teach discipline, teamwork, and leadership, while supporting school attendance, nutrition, mental health, and agribusiness skills.
+            </p>
+        </div>
+
+        <div class="row align-items-start">
+            
+            <!-- LEFT: Mission & Vision Cards -->
+            <div class="col-lg-5 mb-4">
+                <div class="card bg-success text-white mb-3 shadow">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold">👁️ Vision</h3>
+                        <p>To build a generation of young people who Play, Learn and Thrive — empowered through education, health care, life skills, agribusiness, and community-driven projects.</p>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white shadow">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold">🚀 Mission</h3>
+                        <p>To nurture talent, promote education, strength health, and equip vulnerable children with skills and opportunities that improve their well-being.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- RIGHT: Core Values Dropdowns (Accordion) -->
+            <div class="col-lg-7">
+                <h3 class="fw-bold mb-3">Our Core Values</h3>
+                <div class="accordion" id="valuesAccordion">
+
+                    <!-- Value 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                <strong>👶 Child-Centered Empowerment</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                We prioritise the safety, well-being and development of every child. Everything we do is designed to uplift young people.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                <strong>🤝 Equality & Inclusion</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                Every child — boys and girls, vulnerable and orphaned — has equal rights and opportunities. No child is left behind.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                <strong>🛡️ Integrity & Respect</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                We uphold honesty, fairness and dignity. Respect guides all our training, learning and community interactions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                <strong>⭐ Excellence & Growth Mindset</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                We inspire commitment, hard work and a positive mindset — encouraging children to perform their best on and off the field.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                <strong>🏠 Community & Collaboration</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                We build strong, supportive networks with families, schools, partners and the broader community.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                <strong>🏥 Health & Well-Being</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                We promote physical, emotional and mental health through sports, nutrition, hygiene education and our future community health facility.
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- Value 7 -->
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+                                <strong>🌱 Sustainability & Innovation</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#valuesAccordion">
+                            <div class="accordion-body">
+                                We teach practical, life-long skills — including kitchen gardening, poultry and agribusiness — to improve food security and create income opportunities.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<!--IMPACT TO THE SOCIETY-->
+<section id="impact-visual" class="py-5 bg-white">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- LEFT COLUMN: The Visual Composition -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="impact-wrapper">
+                    
+                    <!-- 1. The Main Vertical Photo -->
+                    <img src="images/Football.jpeg" class="main-impact-img shadow" alt="OSA Community">
+
+                    <!-- 2. The Green Badge (Overlay) -->
+                    <div class="impact-badge">
+                        <div class="mb-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                              <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10m0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
+                              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/>
+                              <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                           </svg>
+                        </div>
+                        <h3 class="fw-bold mb-0"> 1 Year</h3>
+                        <p class="small mb-0 opacity-75">Community Empowerment</p>
+                    </div>
+
+                    <!-- 3. The Floating Video Card -->
+                    <!-- *** CHANGE IS HERE: Updated target to '#videoFoot' *** -->
+                    <div class="video-float-card" data-bs-toggle="modal" data-bs-target="#videoFoot">
+                        <div class="position-relative">
+                            <!-- Image that represents the video -->
+                            <img src="images/Football.jpeg" class="img-fluid rounded" alt="Watch Video">
+                            <!-- The Play Button Overlay -->
+                            <div class="play-btn-circle">
+                                ▶
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Text Context -->
+            <div class="col-lg-6 ps-lg-5">
+                <h5 class="text-success text-uppercase fw-bold">Our Proven Impact</h5>
+                <h2 class="display-5 fw-bold mb-4">Transforming Lives in Ong'icha</h2>
+                <p class="lead text-muted">Since our founding, we have focused on tangible results. We don't just talk about change; we grow it in our gardens and build it on our fields.</p>
+                
+                <div class="mt-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="display-4 fw-bold text-success me-3">170+</div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Children Supported</h5>
+                            <p class="small text-muted mb-0">Provided with education & sports gear</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="display-4 fw-bold text-success me-3">100%</div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Local Leadership</h5>
+                            <p class="small text-muted mb-0">Projects managed by the community</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#donate" class="btn btn-dark mt-5 btn-lg">Join the Movement</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SECOND SECTION: AGRIBUSINESS FOCUS -->
+<section class="py-5 bg-light"> <!-- Light background to separate it from the one above -->
+    <div class="container">
+        <div class="row align-items-center flex-md-row-reverse">
+            
+            <!-- RIGHT COLUMN: The Visual Wrapper -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="impact-wrapper">
+                    
+                    <!-- 1. Main Photo: The Garden or Kale -->
+                    <img src="images/Agriculture1.jpeg" class="main-impact-img shadow" alt="Kitchen Garden">
+
+                    <!-- 2. Green Badge -->
+                    <div class="impact-badge" style="background-color: #e6b400;"> <!-- Yellow/Gold for Farming -->
+                         <div class="mb-2">🌱</div> <!-- Leaf Icon -->
+                        <h3 class="fw-bold mb-0">Food</h3>
+                        <p class="small mb-0 opacity-75">Security & Income</p>
+                    </div>
+
+                    <!-- 3. Floating Video Card: Triggers the SAME Poultry video or a different Garden one -->
+                    <div class="video-float-card" style="left: -10px; right: auto;" data-bs-toggle="modal" data-bs-target="#videoAgri">
+                        <div class="position-relative">
+                             <!-- Using a different thumbnail here -->
+                            <img src="images/FarningP.jpeg" class="img-fluid rounded" alt="Watch Farming">
+                            <div class="play-btn-circle" style="background-color: #e6b400;">▶</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- LEFT COLUMN: The Text -->
+            <div class="col-lg-6 pe-lg-5">
+                <h5 class="text-warning text-uppercase fw-bold">Sustainable Livelihoods</h5>
+                <h2 class="display-5 fw-bold mb-4">Feeding Families, Funding Education</h2>
+                <p class="lead text-muted">Through our kitchen garden and poultry projects, we teach children and widows how to generate income and nutritious food from their own backyards.</p>
+                
+                <div class="mt-4">
+                     <div class="d-flex align-items-center mb-3">
+                        <div class="display-4 fw-bold text-warning me-3">3</div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Active Projects</h5>
+                            <p class="small text-muted mb-0">Poultry, Kales, & Maize Farming</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-outline-dark mt-4">Visit our Farm</a>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- Pillars / Projects -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Our Pillars of Impact</h2>
-            <div class="row text-center">
-    
-    <!-- PILLAR 1: FOOTBALL -->
-    <div class="col-md-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm hover-effect">
-            <!-- Image with fixed height so they align perfectly -->
-            <img src="images/Football.jpeg" class="card-img-top" alt="Football Team" 
-                 style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-                <h4 class="fw-bold mt-2">Football</h4>
-                <p class="card-text text-muted small">
-                    Training boys & girls (OSA Kenya Team), participating in local tournaments, and partner partnerships with Save The Ball & UEFA.
-                </p>
+    <!-- UPDATED: WHAT WE DO (6 CARDS) -->
+    <div class="row text-center g-4">
+        
+        <!-- 1. Football -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <img src="images/Training.jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Football">
+                <div class="card-body">
+                    <h5 class="fw-bold">Football Training</h5>
+                    <p class="small text-muted">Sessions 3x a week focusing on skills, fitness, discipline, and talent scouting tournaments.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- PILLAR 2: HEALTHCARE -->
-    <div class="col-md-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm hover-effect">
-            <img src="images/Mensrtual .jpeg" class="card-img-top" alt="Healthcare Workshop" 
-                 style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-                <h4 class="fw-bold mt-2">Healthcare</h4>
-                <p class="card-text text-muted small">
-                    Managing menstruation periods for girls, sanitary towel distribution, and general health awareness workshops.
-                </p>
+        <!-- 2. Education -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <img src="images/Community.jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Education"> <!-- Reused award photo -->
+                <div class="card-body">
+                    <h5 class="fw-bold">Education Support</h5>
+                    <p class="small text-muted">School-fee assistance, stationery, exam support, mentorship, and after-school tutoring.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- PILLAR 3: AGRIBUSINESS -->
-    <div class="col-md-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm hover-effect">
-            <img src="images/Poultry Farming.jpeg" class="card-img-top" alt="Poultry Farming" 
-                 style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-                <h4 class="fw-bold mt-2">Agribusiness</h4>
-                <p class="card-text text-muted small">
-                    Poultry farming and Kitchen gardens to teach self-sustainability, economic independence, and food security.
-                </p>
+        <!-- 3. Health -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <img src="images/Mensrtual .jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Health">
+                <div class="card-body">
+                    <h5 class="fw-bold">Health Care</h5>
+                    <p class="small text-muted">Nutritional meals, basic checks, hygiene education, and our future community health facility.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- PILLAR 4: COMMUNITY -->
-    <div class="col-md-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm hover-effect">
-            <img src="images/Community.jpeg" class="card-img-top" alt="Community Volunteers" 
-                 style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-                <h4 class="fw-bold mt-2">Community</h4>
-                <p class="card-text text-muted small">
-                    Practice life skills, mentorship, and building a stronger Ong'icha community through volunteerism.
-                </p>
+        <!-- 4. Agribusiness -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <img src="images/FarningP.jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Farming">
+                <div class="card-body">
+                    <h5 class="fw-bold">Kitchen Garden & Poultry</h5>
+                    <p class="small text-muted">Hands-on agribusiness training to reduce food insecurity and create income opportunities.</p>
+                </div>
             </div>
         </div>
+
+        <!-- 5. Life Skills -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <!-- Use a group photo here -->
+                <img src="images/Lifeskills.jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Life Skills">
+                <div class="card-body">
+                    <h5 class="fw-bold">Life Skills</h5>
+                    <p class="small text-muted">Leadership, emotional intelligence, and gender equality workshops for positive life choices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Outreach -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                 <!-- Use a community photo here -->
+                <img src="images/Community.jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Outreach">
+                <div class="card-body">
+                    <h5 class="fw-bold">Community Outreach</h5>
+                    <p class="small text-muted">Parent engagement, clean-up drives, school visits, and strategic partnerships.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-</div>
+    <!-- IMPACT STATS SECTION -->
+<section class="py-5 bg-dark text-white text-center">
+    <div class="container">
+        <h2 class="mb-4">Our Impact So Far</h2>
+        <div class="row justify-content-center">
+            
+            <div class="col-md-3 mb-3">
+                <div class="display-4 fw-bold text-success">170+</div>
+                <p>Children Supported</p>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="display-4 fw-bold text-warning">6-18</div>
+                <p>Age Group Trained</p>
+            </div>
+
+             <div class="col-md-3 mb-3">
+                <div class="display-4 fw-bold text-success">3</div>
+                <p>Agribusiness Projects Active</p>
+            </div>
+
+             <div class="col-md-3 mb-3">
+                <div class="display-4 fw-bold text-warning">100%</div>
+                <p>Committed to Schooling</p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- The Team Section -->
    <!-- TEAM SECTION -->
@@ -305,7 +677,7 @@
             <!-- Zachary -->
             <div class="col-md-4 mb-4">
                 <div class="card border-0 shadow-sm text-center p-3 h-100">
-                    <img src="images/Zachary Obiero.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Zachary Obiero" style="object-fit: cover;">
+                    <img src="images/Zach.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Zachary Obiero" style="object-fit: cover;">
                     <h4 class="fw-bold">Zachary Obiero</h4>
                     <p class="text-success mb-0">Founder & Managing Director</p>
                     <small class="text-muted">The visionary behind OSA Kenya.</small>
@@ -319,10 +691,21 @@
             <div class="col-md-4 mb-4">
                 <div class="card border-0 shadow-sm text-center p-3 h-100">
                     <!-- Replace with images/linda.jpg -->
-                    <img src="images/Linda Otieno.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Linda Atieno" style="object-fit: cover;">
+                    <img src="images/Linda.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Linda Atieno" style="object-fit: cover;">
                     <h4 class="fw-bold">Linda Atieno Otieno</h4>
                     <p class="text-success mb-0">Assistant Director</p>
                     <small class="text-muted">Coordinating operations & community care.</small>
+                </div>
+            </div>
+
+            <!--Girls Patron-->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm text-center p-3 h-100">
+                    <!-- Replace with images/linda.jpg -->
+                    <img src="images/Gpatron.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Linda Atieno" style="object-fit: cover;">
+                    <h4 class="fw-bold">Vera Auma</h4>
+                    <p class="text-success mb-0">Girls Patron</p>
+                    <small class="text-muted">Coordinating Girls Related Issues</small>
                 </div>
             </div>
         </div>
@@ -337,36 +720,36 @@
             <!-- Volunteer List Loop -->
             <!-- Copy this block for each photo you have -->
             <div class="col-6 col-md-3 col-lg-2 mb-4">
-                <img src="images/Claire Krueger.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <img src="images/Claire.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
                 <h6 class="fw-bold">Claire Krueger</h6>
             </div>
             
             <div class="col-6 col-md-3 col-lg-2 mb-4">
-                <img src="images/Patricia Klohen.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <img src="images/Klohen.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
                 <h6 class="fw-bold">Patricia Klohen</h6>
             </div>
 
             <div class="col-6 col-md-3 col-lg-2 mb-4">
                 <!-- If you don't have a photo, use a default icon -->
-                <img src="images/Clarine NKoue.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
-                <h6 class="fw-bold">Clarine Nkoue</h6>
+                <img src="images/Clarine.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Carine Nkoue</h6>
             </div>
 
             <div class="col-6 col-md-3 col-lg-2 mb-4">
-                 <img src="images/Guy Leblond.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                 <img src="images/Guy.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
                 <h6 class="fw-bold">Guy Leblond</h6>
             </div>
 
              <div class="col-6 col-md-3 col-lg-2 mb-4">
-                <img src="images/Sijo Joseph.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <img src="images/Sijo.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
                 <h6 class="fw-bold">Sijo Joseph</h6>
             </div>
              <div class="col-6 col-md-3 col-lg-2 mb-4">
-                <img src="images/Tracey Smith.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <img src="images/Tracey.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
                 <h6 class="fw-bold">Tracey Smith</h6>
             </div>
              <div class="col-6 col-md-3 col-lg-2 mb-4">
-                <img src="images/Louisa Turchet.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <img src="images/Louisa .jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
                 <h6 class="fw-bold">Louisa Turchet</h6>
             </div>
         </div>
@@ -393,7 +776,7 @@
             <!-- PARTNER 2: UEFA FOUNDATION -->
             <div class="col-6 col-md-4 mb-4">
                 <div class="p-3">
-                    <img src="images/EUFA Foundation.jpeg" alt="UEFA Foundation" class="img-fluid grayscale-hover" style="max-height: 100px; width: auto;">
+                    <img src="images/EUFA.jpeg" alt="UEFA Foundation" class="img-fluid grayscale-hover" style="max-height: 100px; width: auto;">
                     <h6 class="mt-3 fw-bold text-dark">UEFA Foundation<br><small class="text-muted">For Children</small></h6>
                 </div>
             </div>
@@ -474,26 +857,58 @@
 </section>
 
 
-    <!-- Contact Footer -->
-    <footer id="contact" class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Contact Us</h5>
-                    <p>Ong'icha Soccer Academy, Kisii-Oyugis Highway</p>
-                    <p>📞 +254 110 705094</p>
+    <footer id="contact" class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Column 1: Info -->
+            <div class="col-md-5 mb-4">
+                <h5 class="text-success fw-bold">ONG'ICHA SOCCER ACADEMY</h5>
+                <p class="small">A registered community organisation empowering children through sport, education, health care, and sustainable community projects.</p>
+                <div class="mt-3">
+                    <p>📍 Ong’icha Primary/Secondary School, Kisii–Oyugis Highway</p>
+                    <p>📮 P.O. Box 90-40222, Oyugis, Kenya</p>
+                    <p>📞 +254 110 705094 (Director)</p>
                     <p>✉️ zacharyobiero16@gmail.com</p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p>&copy; 2025 Ong'icha Soccer Academy.</p>
-                    <small>Together we build brighter futures.</small>
-                    <p class="small mt-2">
-                       <a href="#" class="text-white-50 text-decoration-none" onclick="alert('We value your privacy. Your data is used strictly for donation processing and communication.')">Privacy Policy</a>
-                    </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold">Get Involved</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white-50 text-decoration-none" data-bs-toggle="modal" data-bs-target="#donateModal">Donate</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Volunteer Application</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Sponsor an Athlete</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">News & Events</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: News Hook -->
+            <div class="col-md-4">
+                <h5 class="fw-bold">Latest Updates</h5>
+                <p class="small text-white-50">Stay updated on training schedules and tournaments. Check our Socials!</p>
+                <div class="d-flex gap-2">
+                     <a href="https://www.facebook.com/profile.php?id=61581641885620" class="btn btn-sm btn-outline-light">Facebook</a>
+                     <!-- X (Twitter) Link -->
+                    <a href="https://x.com/IchaOsa66871" target="_blank" class="btn btn-sm btn-outline-light d-flex align-items-center">
+    <!-- The X Logo Graphic -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+    </svg>
+    <!-- Text Label (Optional - you can delete this line if you only want the icon) -->
+    <span class="ms-2">Follow us</span>
+</a>
+                     <a href="#" class="btn btn-sm btn-outline-light">Instagram</a>
+                     <a href="#" class="btn btn-sm btn-outline-light">LinkedIn</a>
                 </div>
             </div>
         </div>
-    </footer>
+        
+        <hr class="border-secondary">
+        <p class="text-center small text-white-50">&copy; 2025 Ong’icha Soccer Academy (OSA Kenya). All rights reserved.</p>
+    </div>
+</footer>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -528,14 +943,22 @@
       <div class="modal-body">
         
         <!-- 1. Select Amount Buttons -->
-        <label class="fw-bold mb-2">Select Amount (USD)</label>
-        <div class="donation-btn-group d-flex flex-wrap justify-content-center mb-3" id="amount-options">
-            <button type="button" class="btn flex-fill" onclick="setAmount(5, this)">$5</button>
-            <button type="button" class="btn flex-fill" onclick="setAmount(10, this)">$10</button>
-            <button type="button" class="btn flex-fill active-amount" onclick="setAmount(25, this)">$25</button>
-            <button type="button" class="btn flex-fill" onclick="setAmount(50, this)">$50</button>
-            <button type="button" class="btn flex-fill" onclick="setAmount(100, this)">$100</button>
-        </div>
+        <!-- UPDATED AMOUNT SELECTOR -->
+<label class="fw-bold mb-2">Select Amount (USD)</label>
+<div class="donation-btn-group d-flex flex-wrap justify-content-center mb-2" id="amount-options">
+    <!-- Fixed Buttons -->
+    <button type="button" class="btn flex-fill" onclick="setAmount(5, this)">$5</button>
+    <button type="button" class="btn flex-fill" onclick="setAmount(10, this)">$10</button>
+    <button type="button" class="btn flex-fill active-amount" onclick="setAmount(25, this)">$25</button>
+    <button type="button" class="btn flex-fill" onclick="setAmount(50, this)">$50</button>
+    <button type="button" class="btn flex-fill" onclick="setAmount(100, this)">$100</button>
+</div>
+
+<!-- NEW CUSTOM AMOUNT FIELD -->
+<div class="input-group mb-4">
+    <span class="input-group-text">$</span>
+    <input type="number" id="customAmount" class="form-control" placeholder="Enter custom amount (e.g. 150)" onkeyup="setCustomAmount(this)">
+</div>
 
         <!-- 2. Method Toggle -->
         <label class="fw-bold mb-2 mt-2">Select Payment Method</label>
@@ -583,6 +1006,47 @@
   </div>
 </div>
 
+<!-- ============================================ -->
+<!-- HIDDEN VIDEO PLAYERS (PASTE AT BOTTOM OF BODY) -->
+<!-- ============================================ -->
+
+<!-- 1. FOOTBALL VIDEO MODAL -->
+<div class="modal fade" id="videoFoot" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <!-- IMPORTANT: Ensure your file in 'images' folder is named 'football.mp4' -->
+                <video width="100%" height="auto" controls>
+                    <source src="images/Football.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL: POULTRY VIDEO PLAYER -->
+<div class="modal fade" id="videoAgri" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-0">
+                <!-- IMPORTANT: Make sure 'images/poultry.mp4' matches your file name EXACTLY (lowercase, no spaces) -->
+                <video width="100%" height="auto" controls>
+                    <source src="images/Poultry.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- JAVASCRIPT LOGIC TO HANDLE THE CLICKS -->
 <script>
     // 1. Function to switch the Mpesa/PayPal Divs
@@ -596,9 +1060,12 @@
         }
     }
 
-    // 2. Function to update price when clicking the $ buttons
+    // 2. LOGIC FOR FIXED BUTTONS ($5, $10, etc)
     function setAmount(amount, element) {
-        // Update variable sent to PayPal
+        // Clear the custom box so it doesn't confuse the donor
+        document.getElementById('customAmount').value = ""; 
+        
+        // Update variables
         document.getElementById('realAmount').value = amount;
         document.getElementById('displayAmount').innerText = amount;
         
@@ -606,6 +1073,20 @@
         var buttons = document.querySelectorAll('.donation-btn-group .btn');
         buttons.forEach(btn => btn.classList.remove('active-amount'));
         element.classList.add('active-amount');
+    }
+
+    // 3. LOGIC FOR CUSTOM AMOUNT INPUT
+    function setCustomAmount(element) {
+        // Remove blue highlight from all fixed buttons
+        var buttons = document.querySelectorAll('.donation-btn-group .btn');
+        buttons.forEach(btn => btn.classList.remove('active-amount'));
+
+        // Update the Paypal Value live as they type
+        var val = element.value;
+        if(val) {
+            document.getElementById('realAmount').value = val;
+            document.getElementById('displayAmount').innerText = val;
+        }
     }
 </script>
 </body>
