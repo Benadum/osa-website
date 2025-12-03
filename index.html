@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ong'icha Soccer Academy (OSA)</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/osa_logo.png" type="image/x-icon">
+    <!-- Bootstrap CSS for instant styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Social Media Meta Tags -->
+<meta property="og:title" content="Ong'icha Soccer Academy | Building Brighter Futures">
+<meta property="og:description" content="Empowering vulnerable children through Football, Education, and Agribusiness in Ong'icha, Kisii County. Join us to support One Skill, One Opportunity.">
+<meta property="og:image" content="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/osa-website/main/images/osa_logo.png">
+<meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/osa-website">
+<meta property="og:type" content="website">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        /* CAROUSEL HERO STYLES */
+.hero-wrapper {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* This makes the image darker so text is readable */
+    position: relative;
+}
+
+/* This adds a dark shade over every photo automatically */
+.carousel-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+/* This forces the text to sit ON TOP of the slider */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Above the slider */
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 800px;
+}
+        .bg-green { background-color: #2E8B57; color: white; }
+        .feature-icon { font-size: 3rem; color: #2E8B57; margin-bottom: 15px; }
+        .volunteer-card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-donate { background-color: #ff4500; color: white; padding: 10px 25px; border-radius: 30px; }
+        .btn-donate:hover { background-color: #e03e00; color: white; }
+    
+
+
+        /* DONATION FORM STYLES */
+.donation-btn-group .btn {
+    border: 1px solid #ccc;
+    color: #333;
+    font-weight: bold;
+    margin: 2px;
+}
+.donation-btn-group .btn.active-amount {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.payment-method-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    background: #f9f9f9;
+
+}
+.donation-btn-group .btn { border: 1px solid #ccc; font-weight: bold; margin: 2px; }
+        .donation-btn-group .btn.active-amount { background-color: #0d6efd; color: white; border-color: #0d6efd; }
+        .payment-method-box { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 20px; background: #f9f9f9; }
+
+
+        /* =============================================
+   MOBILE RESPONSIVENESS FIXES 
+   ============================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Make the big headlines smaller on phones */
+    h1.display-3, h1.display-5 {
+        font-size: 2.5rem !important; /* Smaller text */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* 2. Shrink the OSA Logo on mobile navigation */
+    .navbar-brand img {
+        height: 50px !important; /* Smaller logo for phone header */
+        width: auto !important;
+    }
+
+    /* 3. Adjust the Hero Section/Carousel */
+    .hero-wrapper, .carousel-item {
+        height: 60vh; /* Takes 60% of screen height instead of full 100% */
+        min-height: 500px; /* But never get too small */
+    }
+
+    .hero-content {
+        width: 95%; /* Use full width on phone */
+        text-align: center;
+    }
+
+    /* 4. Fix Buttons in the modal popup */
+    .donation-btn-group .btn {
+        flex: 1 1 45%; /* Make buttons side-by-side (2 per row) */
+        margin: 5px !important;
+    }
+    
+    /* 5. Make text readable on phone brightness */
+    p.lead {
+        font-size: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-success" href="#"><img src="images/osa_logo.png" alt="OSA KENYA" style="height: 80px; width: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="#donate" class="btn btn-donate">DONATE / VOLUNTEER</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- HERO CAROUSEL SECTION -->
+<div class="hero-wrapper">
+    
+    <!-- THE CAROUSEL (Background Images) -->
+    <!-- 'data-bs-ride="carousel"' makes it play automatically -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner" id="random-carousel">
+            
+            <!-- IMAGE 1: Football Team -->
+            <!-- REPLACE 'images/team_group.jpg' with your real file name -->
+            <div class="carousel-item active" style="background-image: url('images/Agri2.jpeg');">
+                <div class="carousel-overlay"></div> <!-- Dark shader -->
+            </div>
+
+            <!-- IMAGE 2: Farming/Poultry -->
+            <div class="carousel-item" style="background-image: url('images/Girls\ Team.jpeg');">
+                <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-item" style="background-image: url('images/Agriculture1.jpeg');">
+                <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-item" style="background-image: url('images/Training.jpeg');">
+                <div class="carousel-overlay"></div>
+            </div>
+
+            <!-- IMAGE 3: Volunteers/Action -->
+            <div class="carousel-item" style="background-image: url('images/Agriculture.jpeg');">
+                <div class="carousel-overlay"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- THE TEXT (Stays static while images move behind it) -->
+    <div class="hero-content">
+        <h1 class="display-3 fw-bold">Building Brighter Futures</h1>
+        <p class="lead mb-4">One click, one skill, and one opportunity at a time.</p>
+        <p class="mb-4">Empowering vulnerable children through Football, Education, and Agribusiness in Ong'icha, Kisii County.</p>
+        <div>
+<a href="#" class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE / VOLUNTEER</a>       
+     <a href="#contact" class="btn btn-outline-light btn-lg">Partner With Us</a>
+        </div>
+    </div>
+
+</div>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Who We Are</h2>
+                    <p class="lead">Ong'icha Soccer Academy (OSA) is a grassroots youth empowerment organization based at <strong>Ong'icha Primary/Secondary School</strong> along the Kisii-Oyugis Highway.</p>
+                    <p>Founded by Zachary Obiero, we support orphans and vulnerable children by providing access to football, healthcare, and practical life skills.</p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61581641885620" class="btn btn-outline-primary btn-sm">Facebook</a>
+                        <a href="https://www.linkedin.com/in/ong-icha-soccer-academy-osa-a10030373" class="btn btn-outline-primary btn-sm">LinkedIn</a>
+                        <a href="https://www.instagram.com/zachary.obiero" class="btn btn-outline-danger btn-sm">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars / Projects -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Pillars of Impact</h2>
+            <div class="row text-center">
+    
+    <!-- PILLAR 1: FOOTBALL -->
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-0 shadow-sm hover-effect">
+            <!-- Image with fixed height so they align perfectly -->
+            <img src="images/Football.jpeg" class="card-img-top" alt="Football Team" 
+                 style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h4 class="fw-bold mt-2">Football</h4>
+                <p class="card-text text-muted small">
+                    Training boys & girls (OSA Kenya Team), participating in local tournaments, and partner partnerships with Save The Ball & UEFA.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PILLAR 2: HEALTHCARE -->
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-0 shadow-sm hover-effect">
+            <img src="images/Mensrtual .jpeg" class="card-img-top" alt="Healthcare Workshop" 
+                 style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h4 class="fw-bold mt-2">Healthcare</h4>
+                <p class="card-text text-muted small">
+                    Managing menstruation periods for girls, sanitary towel distribution, and general health awareness workshops.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PILLAR 3: AGRIBUSINESS -->
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-0 shadow-sm hover-effect">
+            <img src="images/Poultry Farming.jpeg" class="card-img-top" alt="Poultry Farming" 
+                 style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h4 class="fw-bold mt-2">Agribusiness</h4>
+                <p class="card-text text-muted small">
+                    Poultry farming and Kitchen gardens to teach self-sustainability, economic independence, and food security.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PILLAR 4: COMMUNITY -->
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-0 shadow-sm hover-effect">
+            <img src="images/Community.jpeg" class="card-img-top" alt="Community Volunteers" 
+                 style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h4 class="fw-bold mt-2">Community</h4>
+                <p class="card-text text-muted small">
+                    Practice life skills, mentorship, and building a stronger Ong'icha community through volunteerism.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+        </div>
+    </section>
+
+    <!-- The Team Section -->
+   <!-- TEAM SECTION -->
+<section id="team" class="py-5 bg-light">
+    <div class="container">
+        
+        <!-- FOUNDERS ROW -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-success">The Leadership Team</h2>
+            <p class="text-muted">Guiding the vision of One Skill, One Opportunity.</p>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <!-- Zachary -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm text-center p-3 h-100">
+                    <img src="images/Zachary Obiero.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Zachary Obiero" style="object-fit: cover;">
+                    <h4 class="fw-bold">Zachary Obiero</h4>
+                    <p class="text-success mb-0">Founder & Managing Director</p>
+                    <small class="text-muted">The visionary behind OSA Kenya.</small>
+                    <div class="mt-3">
+                         <a href="mailto:zacharyobiero16@gmail.com" class="btn btn-sm btn-outline-dark">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linda -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm text-center p-3 h-100">
+                    <!-- Replace with images/linda.jpg -->
+                    <img src="images/Linda Otieno.jpeg" class="rounded-circle mx-auto d-block mb-3" width="150" height="150" alt="Linda Atieno" style="object-fit: cover;">
+                    <h4 class="fw-bold">Linda Atieno Otieno</h4>
+                    <p class="text-success mb-0">Assistant Director</p>
+                    <small class="text-muted">Coordinating operations & community care.</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- VOLUNTEERS GRID -->
+        <div class="text-center mb-4">
+            <h3 class="fw-bold">Our Volunteer Corps</h3>
+            <p>The heartbeat of our activities.</p>
+        </div>
+
+        <div class="row justify-content-center text-center">
+            <!-- Volunteer List Loop -->
+            <!-- Copy this block for each photo you have -->
+            <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <img src="images/Claire Krueger.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Claire Krueger</h6>
+            </div>
+            
+            <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <img src="images/Patricia Klohen.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Patricia Klohen</h6>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <!-- If you don't have a photo, use a default icon -->
+                <img src="images/Clarine NKoue.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Clarine Nkoue</h6>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2 mb-4">
+                 <img src="images/Guy Leblond.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Guy Leblond</h6>
+            </div>
+
+             <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <img src="images/Sijo Joseph.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Sijo Joseph</h6>
+            </div>
+             <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <img src="images/Tracey Smith.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Tracey Smith</h6>
+            </div>
+             <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <img src="images/Louisa Turchet.jpeg" class="rounded-circle mb-2 shadow-sm" width="100" height="100" style="object-fit: cover;">
+                <h6 class="fw-bold">Louisa Turchet</h6>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PARTNERS SECTION -->
+<section id="partners" class="py-5 bg-white">
+    <div class="container text-center">
+        <h3 class="mb-4 fw-bold text-secondary">Our Strategic Partners</h3>
+        <p class="text-muted mb-5">Proudly working together to build better futures.</p>
+
+        <div class="row align-items-center justify-content-center">
+            
+            <!-- PARTNER 1: SAVE THE BALL -->
+            <div class="col-6 col-md-4 mb-4">
+                <div class="p-3">
+                    <img src="images/Save ball.jpeg" alt="Save The Ball" class="img-fluid grayscale-hover" style="max-height: 100px; width: auto;">
+                    <h6 class="mt-3 fw-bold text-dark">Save The Ball<br><small class="text-muted">Soccer for Africa</small></h6>
+                </div>
+            </div>
+
+            <!-- PARTNER 2: UEFA FOUNDATION -->
+            <div class="col-6 col-md-4 mb-4">
+                <div class="p-3">
+                    <img src="images/EUFA Foundation.jpeg" alt="UEFA Foundation" class="img-fluid grayscale-hover" style="max-height: 100px; width: auto;">
+                    <h6 class="mt-3 fw-bold text-dark">UEFA Foundation<br><small class="text-muted">For Children</small></h6>
+                </div>
+            </div>
+
+            <!-- PARTNER 3: Future Partner Placeholder (Or You!) -->
+            <div class="col-6 col-md-4 mb-4">
+                <div class="p-3 border border-dashed rounded opacity-50">
+                   <h1 class="display-6 text-muted">+</h1>
+                   <h6 class="mt-2 text-muted">Become a Partner</h6>
+                   <a href="#contact" class="btn btn-sm btn-outline-secondary mt-2">Contact Us</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Donation / Call to Action Section -->
+  
+<section id="donate" class="py-5" style="background-color: #2E8B57; color: white;">
+    <div class="container">
+        
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Make a Difference Today</h2>
+            <p class="lead">Your support fuels the dream: One skill, one opportunity at a time.</p>
+        </div>
+        
+        <div class="row justify-content-center g-4">
+            
+            <!-- OPTION 1: KENYA (M-PESA) -->
+            <div class="col-md-5">
+                <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5 text-dark">
+                        <!-- Icon -->
+                        <div class="mb-3">🇰🇪</div>
+                        <h3 class="card-title fw-bold">M-PESA (Kenya)</h3>
+                        <hr class="w-50 mx-auto text-success">
+                        
+                        <p class="mb-1 text-muted">Send directly to Till / Number:</p>
+                        <h2 class="text-success fw-bold">+254 110 705094</h2>
+                        <p class="small text-muted">Name: Zachary Obiero / OSA</p>
+
+                        <div class="alert alert-light border mt-4" role="alert">
+                            <small> After sending, please SMS/WhatsApp us so we can acknowledge your gift!</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION 2: INTERNATIONAL (PAYPAL/CARD) -->
+            <div class="col-md-5">
+                <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5 text-dark">
+                        <!-- Icon -->
+                        <div class="mb-3">🌍</div>
+                        <h3 class="card-title fw-bold">International</h3>
+                        <hr class="w-50 mx-auto text-primary">
+                        
+                        <p class="mb-4">Secure donation via PayPal, Visa, or Mastercard.</p>
+                        
+                        <!-- THIS BUTTON TRIGGERS THE POPUP MODAL WE MADE EARLIER -->
+                        <button class="btn btn-warning btn-lg w-100 fw-bold mb-3 shadow-sm" data-bs-toggle="modal" data-bs-target="#donateModal">
+                            Donate Online Now
+                        </button>
+
+                        <div class="d-flex justify-content-center gap-2 grayscale-images">
+                             <!-- Visual trust badges -->
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="25" alt="PayPal">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" height="25" alt="Visa">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" height="25" alt="Mastercard">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Ong'icha Soccer Academy, Kisii-Oyugis Highway</p>
+                    <p>📞 +254 110 705094</p>
+                    <p>✉️ zacharyobiero16@gmail.com</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 Ong'icha Soccer Academy.</p>
+                    <small>Together we build brighter futures.</small>
+                    <p class="small mt-2">
+                       <a href="#" class="text-white-50 text-decoration-none" onclick="alert('We value your privacy. Your data is used strictly for donation processing and communication.')">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // This script shuffles the images before the site starts
+    var parent = document.querySelector("#random-carousel");
+    var divs = parent.children;
+    var frag = document.createDocumentFragment();
+    while (divs.length) {
+        frag.appendChild(divs[Math.floor(Math.random() * divs.length)]);
+    }
+    parent.appendChild(frag);
+
+    // Ensure one slide is set to 'active' or it won't show!
+    var items = document.querySelectorAll('.carousel-item');
+    items.forEach(el => el.classList.remove('active')); // Reset all
+    items[0].classList.add('active'); // Make the new first one visible
+</script>
+
+<!-- DONATION MODAL POPUP -->
+<div class="modal fade" id="donateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title fw-bold">Support OSA Kenya</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- 1. Select Amount Buttons -->
+        <label class="fw-bold mb-2">Select Amount (USD)</label>
+        <div class="donation-btn-group d-flex flex-wrap justify-content-center mb-3" id="amount-options">
+            <button type="button" class="btn flex-fill" onclick="setAmount(5, this)">$5</button>
+            <button type="button" class="btn flex-fill" onclick="setAmount(10, this)">$10</button>
+            <button type="button" class="btn flex-fill active-amount" onclick="setAmount(25, this)">$25</button>
+            <button type="button" class="btn flex-fill" onclick="setAmount(50, this)">$50</button>
+            <button type="button" class="btn flex-fill" onclick="setAmount(100, this)">$100</button>
+        </div>
+
+        <!-- 2. Method Toggle -->
+        <label class="fw-bold mb-2 mt-2">Select Payment Method</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="payMethod" id="radioMpesa" value="mpesa" checked onclick="toggleMethod()">
+            <label class="form-check-label" for="radioMpesa">
+                <strong>🇰🇪 M-PESA (Kenya)</strong>
+            </label>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="payMethod" id="radioPaypal" value="paypal" onclick="toggleMethod()">
+            <label class="form-check-label" for="radioPaypal">
+                <strong>🌍 PayPal / International Card</strong>
+            </label>
+        </div>
+
+        <!-- OPTION 1: M-PESA DISPLAY -->
+        <div id="mpesa-box" class="payment-method-box border-success text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png" height="50" class="mb-3">
+            <h5>Send to M-Pesa</h5>
+            <p class="display-6 fw-bold text-success">+254 110 705094</p>
+            <p class="text-muted">Name: Zachary Obiero / OSA</p>
+            <hr>
+            <small>Once sent, please WhatsApp us so we can thank you!</small>
+        </div>
+
+        <!-- OPTION 2: PAYPAL DISPLAY -->
+        <div id="paypal-box" class="payment-method-box" style="display: none;">
+            <!-- Real PayPal Form logic -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="zacharyobiero16@gmail.com" />
+                <input type="hidden" name="currency_code" value="USD" />
+                
+                <!-- This creates the Dynamic Amount Variable -->
+                <label>Amount Selected: $<span id="displayAmount">25</span></label>
+                <input type="hidden" name="amount" id="realAmount" value="25" />
+                
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" class="mt-3 w-100" />
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JAVASCRIPT LOGIC TO HANDLE THE CLICKS -->
+<script>
+    // 1. Function to switch the Mpesa/PayPal Divs
+    function toggleMethod() {
+        if (document.getElementById('radioMpesa').checked) {
+            document.getElementById('mpesa-box').style.display = 'block';
+            document.getElementById('paypal-box').style.display = 'none';
+        } else {
+            document.getElementById('mpesa-box').style.display = 'none';
+            document.getElementById('paypal-box').style.display = 'block';
+        }
+    }
+
+    // 2. Function to update price when clicking the $ buttons
+    function setAmount(amount, element) {
+        // Update variable sent to PayPal
+        document.getElementById('realAmount').value = amount;
+        document.getElementById('displayAmount').innerText = amount;
+        
+        // Highlight the button blue
+        var buttons = document.querySelectorAll('.donation-btn-group .btn');
+        buttons.forEach(btn => btn.classList.remove('active-amount'));
+        element.classList.add('active-amount');
+    }
+</script>
+</body>
+</html>
