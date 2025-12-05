@@ -15,205 +15,10 @@
 <meta property="og:title" content="Ong'icha Soccer Academy | Building Brighter Futures">
 <meta property="og:description" content="Empowering vulnerable children through Football, Education, and Agribusiness in Ong'icha, Kisii County. Join us to support One Skill, One Opportunity.">
 <meta property="og:image" content="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/osa-website/main/images/osa_logo.png">
-<meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/osa-website">
+<meta property="og:url" content="https://Benadum.github.io/osa-website">
 <meta property="og:type" content="website">
-    <style>
-        body { font-family: 'Open Sans', sans-serif; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
-        /* CAROUSEL HERO STYLES */
-.hero-wrapper {
-    position: relative;
-    height: 100vh; /* Full screen height */
-    overflow: hidden;
-}
-
-.carousel-item {
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* This makes the image darker so text is readable */
-    position: relative;
-}
-
-/* This adds a dark shade over every photo automatically */
-.carousel-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6); 
-    z-index: 1;
-}
-
-/* This forces the text to sit ON TOP of the slider */
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Above the slider */
-    text-align: center;
-    color: white;
-    width: 90%;
-    max-width: 800px;
-}
-        .bg-green { background-color: #2E8B57; color: white; }
-        .feature-icon { font-size: 3rem; color: #2E8B57; margin-bottom: 15px; }
-        .volunteer-card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn-donate { background-color: #ff4500; color: white; padding: 10px 25px; border-radius: 30px; }
-        .btn-donate:hover { background-color: #e03e00; color: white; }
-    
-
-
-        /* DONATION FORM STYLES */
-.donation-btn-group .btn {
-    border: 1px solid #ccc;
-    color: #333;
-    font-weight: bold;
-    margin: 2px;
-}
-.donation-btn-group .btn.active-amount {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-.payment-method-box {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 20px;
-    background: #f9f9f9;
-
-}
-.donation-btn-group .btn { border: 1px solid #ccc; font-weight: bold; margin: 2px; }
-        .donation-btn-group .btn.active-amount { background-color: #0d6efd; color: white; border-color: #0d6efd; }
-        .payment-method-box { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 20px; background: #f9f9f9; }
-
-
-        /* IMPACT VISUAL COMPOSITION */
-.impact-wrapper {
-    position: relative;
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto; /* Center it */
-}
-
-/* 1. The Tall Main Photo */
-.main-impact-img {
-    width: 90%;
-    height: 500px; /* Force it tall */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-left: 10%; /* Shift right to make room for green box */
-}
-
-/* 2. The Green Floating Badge */
-.impact-badge {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 220px;
-    padding: 30px 20px;
-    background-color: #2fb42a; /* Bright Green */
-    color: white;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    z-index: 2; /* Sit on top of photo */
-}
-/* The little Red Triangle shadow effect */
-.impact-badge::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0; 
-    height: 0; 
-    border-top: 15px solid #a31d1d; /* Dark Red Shadow */
-    border-left: 15px solid transparent;
-}
-
-/* 3. The Video Thumbnail Floating Card */
-.video-float-card {
-    position: absolute;
-    bottom: 50px;
-    right: -10px;
-    width: 240px;
-    padding: 10px;
-    background: white;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-radius: 4px;
-    cursor: pointer;
-    z-index: 3; /* Sit on top of everything */
-    transition: transform 0.3s ease;
-}
-.video-float-card:hover {
-    transform: scale(1.05); /* Zoom slightly on hover */
-}
-.play-btn-circle {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px; height: 50px;
-    background: #2fb42a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center; justify-content: center;
-    color: white;
-    font-size: 24px;
-    border: 3px solid white;
-}
-
-/* MOBILE FIXES: Reset the float logic for phones */
-@media (max-width: 768px) {
-    .main-impact-img { width: 100%; margin: 0; height: 350px; }
-    .impact-badge { position: relative; width: 100%; top: 0; left: 0; margin-bottom: -30px; }
-    .video-float-card { position: relative; bottom: 0; right: 0; width: 100%; margin-top: -50px; }
-}
-
-
-        /* =============================================
-   MOBILE RESPONSIVENESS FIXES 
-   ============================================= */
-
-@media (max-width: 768px) {
-    
-    /* 1. Make the big headlines smaller on phones */
-    h1.display-3, h1.display-5 {
-        font-size: 2.5rem !important; /* Smaller text */
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    /* 2. Shrink the OSA Logo on mobile navigation */
-    .navbar-brand img {
-        height: 50px !important; /* Smaller logo for phone header */
-        width: auto !important;
-    }
-
-    /* 3. Adjust the Hero Section/Carousel */
-    .hero-wrapper, .carousel-item {
-        height: 60vh; /* Takes 60% of screen height instead of full 100% */
-        min-height: 500px; /* But never get too small */
-    }
-
-    .hero-content {
-        width: 95%; /* Use full width on phone */
-        text-align: center;
-    }
-
-    /* 4. Fix Buttons in the modal popup */
-    .donation-btn-group .btn {
-        flex: 1 1 45%; /* Make buttons side-by-side (2 per row) */
-        margin: 5px !important;
-    }
-    
-    /* 5. Make text readable on phone brightness */
-    p.lead {
-        font-size: 1rem;
-    }
-}
-    </style>
+    <!-- Main CSS File -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -980,21 +785,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    // This script shuffles the images before the site starts
-    var parent = document.querySelector("#random-carousel");
-    var divs = parent.children;
-    var frag = document.createDocumentFragment();
-    while (divs.length) {
-        frag.appendChild(divs[Math.floor(Math.random() * divs.length)]);
-    }
-    parent.appendChild(frag);
-
-    // Ensure one slide is set to 'active' or it won't show!
-    var items = document.querySelectorAll('.carousel-item');
-    items.forEach(el => el.classList.remove('active')); // Reset all
-    items[0].classList.add('active'); // Make the new first one visible
-</script>
+   <script src="js/script.js"></script>
 
 <!-- DONATION MODAL POPUP -->
 <div class="modal fade" id="donateModal" tabindex="-1" aria-hidden="true">
@@ -1133,47 +924,15 @@
     </div>
 </div>
 
-<!-- JAVASCRIPT LOGIC TO HANDLE THE CLICKS -->
-<script>
-    // 1. Function to switch the Mpesa/PayPal Divs
-    function toggleMethod() {
-        if (document.getElementById('radioMpesa').checked) {
-            document.getElementById('mpesa-box').style.display = 'block';
-            document.getElementById('paypal-box').style.display = 'none';
-        } else {
-            document.getElementById('mpesa-box').style.display = 'none';
-            document.getElementById('paypal-box').style.display = 'block';
-        }
-    }
 
-    // 2. LOGIC FOR FIXED BUTTONS ($5, $10, etc)
-    function setAmount(amount, element) {
-        // Clear the custom box so it doesn't confuse the donor
-        document.getElementById('customAmount').value = ""; 
-        
-        // Update variables
-        document.getElementById('realAmount').value = amount;
-        document.getElementById('displayAmount').innerText = amount;
-        
-        // Highlight the button blue
-        var buttons = document.querySelectorAll('.donation-btn-group .btn');
-        buttons.forEach(btn => btn.classList.remove('active-amount'));
-        element.classList.add('active-amount');
-    }
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/254110705094?text=Hello%20OSA,%20I%20would%20like%20to%20get%20involved." target="_blank" class="whatsapp-float">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+    </svg>
+</a>
 
-    // 3. LOGIC FOR CUSTOM AMOUNT INPUT
-    function setCustomAmount(element) {
-        // Remove blue highlight from all fixed buttons
-        var buttons = document.querySelectorAll('.donation-btn-group .btn');
-        buttons.forEach(btn => btn.classList.remove('active-amount'));
 
-        // Update the Paypal Value live as they type
-        var val = element.value;
-        if(val) {
-            document.getElementById('realAmount').value = val;
-            document.getElementById('displayAmount').innerText = val;
-        }
-    }
-</script>
+
 </body>
 </html>

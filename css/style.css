@@ -1,0 +1,219 @@
+body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        /* CAROUSEL HERO STYLES */
+.hero-wrapper {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* This makes the image darker so text is readable */
+    position: relative;
+}
+
+/* This adds a dark shade over every photo automatically */
+.carousel-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+/* This forces the text to sit ON TOP of the slider */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Above the slider */
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 800px;
+}
+        .bg-green { background-color: #2E8B57; color: white; }
+        .feature-icon { font-size: 3rem; color: #2E8B57; margin-bottom: 15px; }
+        .volunteer-card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-donate { background-color: #ff4500; color: white; padding: 10px 25px; border-radius: 30px; }
+        .btn-donate:hover { background-color: #e03e00; color: white; }
+    
+
+
+        /* DONATION FORM STYLES */
+.donation-btn-group .btn {
+    border: 1px solid #ccc;
+    color: #333;
+    font-weight: bold;
+    margin: 2px;
+}
+.donation-btn-group .btn.active-amount {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.payment-method-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    background: #f9f9f9;
+
+}
+.donation-btn-group .btn { border: 1px solid #ccc; font-weight: bold; margin: 2px; }
+        .donation-btn-group .btn.active-amount { background-color: #0d6efd; color: white; border-color: #0d6efd; }
+        .payment-method-box { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 20px; background: #f9f9f9; }
+
+
+        /* IMPACT VISUAL COMPOSITION */
+.impact-wrapper {
+    position: relative;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto; /* Center it */
+}
+
+/* 1. The Tall Main Photo */
+.main-impact-img {
+    width: 90%;
+    height: 500px; /* Force it tall */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 10%; /* Shift right to make room for green box */
+}
+
+/* 2. The Green Floating Badge */
+.impact-badge {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 220px;
+    padding: 30px 20px;
+    background-color: #2fb42a; /* Bright Green */
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 2; /* Sit on top of photo */
+}
+/* The little Red Triangle shadow effect */
+.impact-badge::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid #a31d1d; /* Dark Red Shadow */
+    border-left: 15px solid transparent;
+}
+
+/* 3. The Video Thumbnail Floating Card */
+.video-float-card {
+    position: absolute;
+    bottom: 50px;
+    right: -10px;
+    width: 240px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 3; /* Sit on top of everything */
+    transition: transform 0.3s ease;
+}
+.video-float-card:hover {
+    transform: scale(1.05); /* Zoom slightly on hover */
+}
+.play-btn-circle {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; height: 50px;
+    background: #2fb42a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; justify-content: center;
+    color: white;
+    font-size: 24px;
+    border: 3px solid white;
+}
+
+/* MOBILE FIXES: Reset the float logic for phones */
+@media (max-width: 768px) {
+    .main-impact-img { width: 100%; margin: 0; height: 350px; }
+    .impact-badge { position: relative; width: 100%; top: 0; left: 0; margin-bottom: -30px; }
+    .video-float-card { position: relative; bottom: 0; right: 0; width: 100%; margin-top: -50px; }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+    background-color: #1ebc57;
+    transform: scale(1.1); /* Grow slightly on hover */
+    color: white;
+}
+
+        /* =============================================
+   MOBILE RESPONSIVENESS FIXES 
+   ============================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Make the big headlines smaller on phones */
+    h1.display-3, h1.display-5 {
+        font-size: 2.5rem !important; /* Smaller text */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* 2. Shrink the OSA Logo on mobile navigation */
+    .navbar-brand img {
+        height: 50px !important; /* Smaller logo for phone header */
+        width: auto !important;
+    }
+
+    /* 3. Adjust the Hero Section/Carousel */
+    .hero-wrapper, .carousel-item {
+        height: 60vh; /* Takes 60% of screen height instead of full 100% */
+        min-height: 500px; /* But never get too small */
+    }
+
+    .hero-content {
+        width: 95%; /* Use full width on phone */
+        text-align: center;
+    }
+
+    /* 4. Fix Buttons in the modal popup */
+    .donation-btn-group .btn {
+        flex: 1 1 45%; /* Make buttons side-by-side (2 per row) */
+        margin: 5px !important;
+    }
+    
+    /* 5. Make text readable on phone brightness */
+    p.lead {
+        font-size: 1rem;
+    }
+}
